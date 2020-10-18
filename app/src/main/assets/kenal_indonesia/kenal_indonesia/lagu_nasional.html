@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/menu.css" rel="stylesheet">
+    
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/database.js"></script>
+
+
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-twitch" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">
+				<span class="small-nav"> <span class="logo" align='center'> <img src="image/logo.png" width="75%"> </span> </span>
+				<span class="full-nav"> <p style="font-size: 7"> Kenal Indonesia </p></span>
+			</a>
+		</div>
+		<div id="Menu">
+			<!-- Tempat Meletakan Menu -->
+		</div><!--/.nav-collapse -->
+	</div>
+</div>
+<button type="button" class="btn btn-default btn-xs navbar-twitch-toggle">
+	<span class="glyphicon glyphicon-chevron-right nav-open"></span>		
+	<span class="glyphicon glyphicon-chevron-left nav-close"></span>
+</button>
+
+<div class="container" style="padding-left: 80px; padding-top: 30px; width: 100%">
+			
+	<div class="row">
+	<div class="well" style="width: 100%">Pilih Lagu</div>
+	
+	<div align="left" id="Loop">
+		
+	</div>
+	</div>
+    
+</div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.navbar-nav [data-toggle="tooltip"]').tooltip();
+    $('.navbar-twitch-toggle').on('click', function(event) {
+        event.preventDefault();
+        $('.navbar-twitch').toggleClass('open');
+    });
+    
+    $('.nav-style-toggle').on('click', function(event) {
+        event.preventDefault();
+        var $current = $('.nav-style-toggle.disabled');
+        $(this).addClass('disabled');
+        $current.removeClass('disabled');
+        $('.navbar-twitch').removeClass('navbar-'+$current.data('type'));
+        $('.navbar-twitch').addClass('navbar-'+$(this).data('type'));
+    });
+});
+</script>
+<script type="text/javascript">
+
+	var waw ="";
+
+	var i;
+	for (var i = 0; i < 21; i++) {
+		waw =  waw + "<div class='thumbnail' style='width: 100%'><b><i>" +  judul[i] + "</i></b><br/><a href='lagu/" + (i+1) + ".html'><button type='button' class='btn btn-primary'><span class='glyphicon glyphicon-eye-open'></span> Lihat</button></a></div>";
+	}
+	document.getElementById("Loop").innerHTML = waw;
+	document.getElementById("Menu").innerHTML = Menu_Utama[0];
+// }
+</script>
+
+
+</body>
+</html>

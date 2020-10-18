@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/menu.css" rel="stylesheet">
+    
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/database.js"></script>
+</head>
+<body>
+			<div id="myModal" class="modal fade" role="dialog">
+				<div class="modal-dialog" >
+					<!-- konten modal-->
+					<div class="modal-content">
+						<!-- heading modal -->
+						<div class="modal-header" style="background-color: red">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h1 class="modal-title" style="color: rgb(255,255,255);">Perhatian !</h1>
+						</div>
+						<!-- body modal -->
+						<div class="modal-body">
+							<p>Untuk melihat video tari Khas Provinsi anda harus terhubung ke internet</p>
+						</div>
+						<!-- footer modal -->
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
+						</div>
+					</div>
+				</div>
+			</div>
+<div class="navbar navbar-inverse navbar-twitch" role="navigation">
+	<div class="container">
+			
+
+
+
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">
+				<span class="small-nav"> <span class="logo" align='center'> <img src="../image/logo.png" width="75%"> </span> </span>
+				<span class="full-nav"> <p style="font-size: 7"> Kenal Indonesia </p></span>
+			</a>
+		</div>
+		<div id="Menu">
+			<!-- Tempat Meletakan Menu -->
+		</div><!--/.nav-collapse -->
+	</div>
+</div>
+<button type="button" class="btn btn-default btn-xs navbar-twitch-toggle">
+	<span class="glyphicon glyphicon-chevron-right nav-open"></span>		
+	<span class="glyphicon glyphicon-chevron-left nav-close"></span>
+</button>
+
+<div class="container" style="padding-left: 80px; padding-top: 30px; padding-right: 20px">
+	<div class="row">
+    <a href="../provinsi.html"><button type="button" class="btn btn-primary" style="width: 100%"><b><h5 style="font: arial"><span class="glyphicon glyphicon-arrow-left"></span>  KEMBALI</h5></b></button></a> <br/><br/>
+	<div id="Loop">
+	
+	</div>
+    
+</div>
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.navbar-nav [data-toggle="tooltip"]').tooltip();
+    $('.navbar-twitch-toggle').on('click', function(event) {
+        event.preventDefault();
+        $('.navbar-twitch').toggleClass('open');
+    });
+    
+    $('.nav-style-toggle').on('click', function(event) {
+        event.preventDefault();
+        var $current = $('.nav-style-toggle.disabled');
+        $(this).addClass('disabled');
+        $current.removeClass('disabled');
+        $('.navbar-twitch').removeClass('navbar-'+$current.data('type'));
+        $('.navbar-twitch').addClass('navbar-'+$(this).data('type'));
+    });
+});
+</script>
+<script type="text/javascript">
+	var header, semboyan, rumah, baju, alat_musik, tari;
+	var j = 28;
+	var i = j - 1;
+	header =  "<div class='well'><b><h3>" +  provinsi[i] + "</h3></b></div>";
+	semboyan = "<div  align='center'><div class='thumbnail'><img src='../image/logo/" + nomor[i] + ".jpg' width=75%><br/><h3>Ibukota : " + ibukota[i] + "</h3><br/><h3>SEMBOYAN : <br/>" + motto[i] + "</h3></div></div>";
+	rumah = "<div align='center'><div class='thumbnail'><div class='well'>Rumah Adat :" + rumah[i] + "</div><img src='../image/rumah_adat/" + nomor[i] + ".jpg'' class='img-rounded' width=100% ></div></div>"
+	baju = "<div align='center'><div class='thumbnail'><div class='well'>Baju Adat : " + baju[i] + "</div><img src='../image/baju_adat/" + nomor[i] + ".jpg' class='img-circle' width=60% ></div></div>"
+	alat = "<div align='center'><div class='thumbnail'><div class='well'>Alat Musik Tradisional : " + alat[i] + "</div><img src='../image/alat_musik/" + nomor[i] + ".jpg' class='img-circle' width=100% ></div></div>"
+ 	tari = "<div align='center'><div class='thumbnail'><div class='well'>Tarian Daerah : " + tari[i] + "</div><iframe width='100%'' height='400px' src=" + link[i] + " frameborder='0' allowfullscreen></iframe></div></div>"
+
+	document.getElementById("Loop").innerHTML = header + semboyan + rumah + baju + alat + tari;
+</script>
+
+<script type="text/javascript">
+	document.getElementById("Menu").innerHTML = Menu_Isi[0];
+</script>
+<script type="text/javascript">
+	$('#myModal').modal('show');
+</script>
+</body>
+</html>

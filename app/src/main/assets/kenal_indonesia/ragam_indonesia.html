@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/menu.css" rel="stylesheet">
+    
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/database.js"></script>
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-twitch" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">
+				<span class="small-nav"> <span class="logo" align='center'> <img src="image/logo.png" width="75%"> </span> </span>
+				<span class="full-nav"> <p style="font-size: 7"> Kenal Indonesia </p></span>
+			</a>
+		</div>
+		<div id="Menu">
+			<!-- Tempat Meletakan Menu -->
+		</div><!--/.nav-collapse -->
+	</div>
+</div>
+<button type="button" class="btn btn-default btn-xs navbar-twitch-toggle">
+	<span class="glyphicon glyphicon-chevron-right nav-open"></span>		
+	<span class="glyphicon glyphicon-chevron-left nav-close"></span>
+</button>
+
+<div class="container" style="padding-left: 80px; padding-top: 30px; padding-right: 20px">
+	<div class="row">
+	<div class="well" ></div>
+	<p id="nyoo"></p>
+	<div id="Loop">
+	
+		<!-- Tempat Untuk meletakan provinsi -->
+		<div class="col-sm-11 col-md-11" align="center">
+			<div class="thumbnail">
+				<img src="image/flora/2.jpg" class="img-rounded" width="50%"><br/>
+				<a href="flora.html"><button class="btn btn-primary">Flora Indonesia</button></a>
+			</div>
+		</div>
+		<div class="col-sm-11 col-md-11" align="center">
+			<div class="thumbnail">
+				<img src="image/fauna/1.jpg" class="img-rounded" width="50%"><br/>
+				<a href="fauna.html"><button class="btn btn-primary">Fauna Indonesia</button></a>
+			</div>
+		</div>
+		<div class="col-sm-11 col-md-11" align="center">
+			<div class="thumbnail">
+				<img src="image/situs_warisan/1.jpg" class="img-rounded" width="50%"><br/>
+				<a href="situs_warisan.html"><button class="btn btn-primary">Situs Warisan Dunia</button></a>
+			</div>
+		</div>
+		<!-- <div class="col-sm-11 col-md-11" align="center">
+			<div class="thumbnail">
+				<img src="image/presiden/1.jpg" class="img-circle" width="25%"><br/>
+				<a href="presiden.html"><button class="btn btn-primary">Presiden Indonesia</button></a>
+			</div>
+		</div> -->
+		
+	</div>
+	</div>
+    
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.navbar-nav [data-toggle="tooltip"]').tooltip();
+    $('.navbar-twitch-toggle').on('click', function(event) {
+        event.preventDefault();
+        $('.navbar-twitch').toggleClass('open');
+    });
+    
+    $('.nav-style-toggle').on('click', function(event) {
+        event.preventDefault();
+        var $current = $('.nav-style-toggle.disabled');
+        $(this).addClass('disabled');
+        $current.removeClass('disabled');
+        $('.navbar-twitch').removeClass('navbar-'+$current.data('type'));
+        $('.navbar-twitch').addClass('navbar-'+$(this).data('type'));
+    });
+});
+</script>
+<script type="text/javascript">
+	document.getElementById("Menu").innerHTML = Menu_Utama[0];
+// }
+</script>
+</body>
+</html>

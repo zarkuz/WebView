@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/menu.css" rel="stylesheet">
+    
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/database.js"></script>
+
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-twitch" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">
+				<span class="small-nav"> <span class="logo" align='center'> <img src="image/logo.png" width="75%"> </span> </span>
+				<span class="full-nav"> <p style="font-size: 7"> Kenal Indonesia </p></span>
+			</a>
+		</div>
+		<div id="Menu">
+			<!-- Tempat Meletakan Menu -->
+		</div><!--/.nav-collapse -->
+	</div>
+</div>
+<button type="button" class="btn btn-default btn-xs navbar-twitch-toggle">
+	<span class="glyphicon glyphicon-chevron-right nav-open"></span>		
+	<span class="glyphicon glyphicon-chevron-left nav-close"></span>
+</button>
+
+<div class="container" style="padding-left: 80px; padding-top: 30px; padding-right: 20px">
+	<div class="row">
+	
+	<div class="well well-sm" align="center">
+	<img src="image/logo.png" width="25%">
+	<b><h3> Kenal Indonesia </h3></b></div>
+		
+		
+		<div  align="center">
+			<div class="thumbnail">
+			<table>
+				<tr>
+					<td>
+						<a href="provinsi.html"><button type="button" class="btn btn-info" style="width: 90px; height: 90px"><span class="glyphicon glyphicon-book" style="font-size: 40px"></span><br/>
+						<p style="font-size: 10px">Informasi Provinsi</p></button></a>
+					</td>
+					<td width="10px">    </td>
+					<td>
+						<a href="lagu_nasional.html"><button type="button" class="btn btn-info" style="width: 90px; height: 90px"><span class="glyphicon glyphicon-music" style="font-size: 40px"></span><br/>
+						<p style="font-size: 10px">Lagu Nasional</p></button></a>
+					</td>
+				</tr>
+				<tr>
+					<td height="10px"></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>
+						<a href="sejarah_indonesia.html"><button type="button" class="btn btn-success" style="width: 90px; height: 90px"><span class="glyphicon glyphicon-user" style="font-size: 40px"></span><br/>
+						<p style="font-size: 10px">Sejarah Indonesia</p></button></a>  
+					</td>
+					<td width="10px">    </td>
+					<td>
+						<a href="ragam_indonesia.html"><button type="button" class="btn btn-success" style="width: 90px; height: 90px"><span class="glyphicon glyphicon-thumbs-up" style="font-size: 40px"></span><br/>
+						<p style="font-size: 10px">Ragam Indonesia</p></button></a>
+					</td>
+				</tr>
+				<tr>
+					<td height="10px"></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>
+						<a href="quiz_start.html"><button type="button" class="btn btn-warning" style="width: 90px; height: 90px"><span class="glyphicon glyphicon-pencil" style="font-size: 40px"></span><br/>
+						<p style="font-size: 10px">Quiz</p></button></a>  
+					</td>
+					<td width="10px">    </td>
+					<td>
+						<a href="info.html"><button type="button" class="btn btn-warning" style="width: 90px; height: 90px"><span class="glyphicon glyphicon-info-sign" style="font-size: 40px"></span><br/>
+						<p style="font-size: 10px">Informasi</p></button></a>
+					</td>
+				</tr>
+				<tr>
+					<td height="10px"></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>
+						<a href="help.html"><button type="button" class="btn btn-danger" style="width: 90px; height: 90px"><span class="glyphicon glyphicon-question-sign" style="font-size: 40px"></span><br/>
+						<p style="font-size: 10px">Petunjuk</p></button></a>  
+					</td>
+					<td width="10px">    </td>
+					<td>
+						
+					</td>
+				</tr>
+			</table>
+			
+	        </div>
+		</div>
+	
+
+	</div>
+    
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.navbar-nav [data-toggle="tooltip"]').tooltip();
+    $('.navbar-twitch-toggle').on('click', function(event) {
+        event.preventDefault();
+        $('.navbar-twitch').toggleClass('open');
+    });
+    
+    $('.nav-style-toggle').on('click', function(event) {
+        event.preventDefault();
+        var $current = $('.nav-style-toggle.disabled');
+        $(this).addClass('disabled');
+        $current.removeClass('disabled');
+        $('.navbar-twitch').removeClass('navbar-'+$current.data('type'));
+        $('.navbar-twitch').addClass('navbar-'+$(this).data('type'));
+    });
+});
+</script>
+<script type="text/javascript">
+	document.getElementById("Menu").innerHTML = Menu_Utama[0];
+</script>
+</body>
+</html>

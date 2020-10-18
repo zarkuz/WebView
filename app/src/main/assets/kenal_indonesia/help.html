@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/menu.css" rel="stylesheet">
+    
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/database.js"></script>
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-twitch" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">
+				<span class="small-nav"> <span class="logo" align='center'> <img src="image/logo.png" width="75%"> </span> </span>
+				<span class="full-nav"> <p style="font-size: 7"> Kenal Indonesia </p></span>
+			</a>
+		</div>
+		<div id="Menu">
+			<!-- Tempat Meletakan Menu -->
+		</div><!--/.nav-collapse -->
+	</div>
+</div>
+<button type="button" class="btn btn-default btn-xs navbar-twitch-toggle">
+	<span class="glyphicon glyphicon-chevron-right nav-open"></span>		
+	<span class="glyphicon glyphicon-chevron-left nav-close"></span>
+</button>
+
+<div class="container" style="padding-left: 80px; padding-top: 30px; padding-right: 20px">
+	<div class="row">
+	
+	<div class="well well-sm"><b><h3> Petunjuk Penggunaan</h3></b></div>
+		
+		<div>
+			<div class="thumbnail">
+			<p style="text-align: center"><b>Menu</b></p>
+			<p align="left">
+				<span class="glyphicon glyphicon-home"></span> Berfungsi untuk kembali kehalaman utama
+				<br/>
+				<span class="glyphicon glyphicon-book"></span> Berfungsi untuk kembali kehalaman provinsi
+				<br/>
+				<span class="glyphicon glyphicon-music"></span> Berfungsi untuk kembali kehalaman lagu nasional
+				<br/>
+				<span class="glyphicon glyphicon-user"></span> Berfungsi untuk kembali kehalaman sejarah indonesia
+				<br/>
+				<span class="glyphicon glyphicon-thumbs-up"></span> Berfungsi untuk kembali kehalaman ragam indonesia
+				<br/>
+				<span class="glyphicon glyphicon-pencil"></span> Berfungsi untuk kembali kehalaman quiz
+				<br/>
+				<span class="glyphicon glyphicon-question-sign"></span> Berfungsi untuk kembali kehalaman petunjuk aplikasi
+				<br/>
+				<span class="glyphicon glyphicon-info-sign"></span> Berfungsi untuk kembali kehalaman informasi aplikasi
+			</p>
+	
+	        </div>
+		</div>
+		<div  align="justify">
+			<div class="thumbnail">
+			<img src="image/petunjuk/provinsi.png" width=75%><br/>
+			
+			Untuk melihat tentang informasi maka klik pada nama informasi yang diingikan, setelah itu akan tampil detail informasi suatu provinsi (logo, semboyan, baju adat, rumah adat dan tarian daerah). Untuk melihat tarian daerah anda harus terkoneksi dengan internet
+	        </div>
+		</div>
+		<div  align="left">
+			<div class="thumbnail">
+			<img src="image/petunjuk/lagu.png" width=75%><br/>
+			<br/>
+			Untuk mendengarkan lagu anda harus terkoneksi dengan internet.
+			<br/><br/>
+			<span class="glyphicon glyphicon-play"></span> Berfungsi untuk memainkan lagu
+			<br/>
+			<span class="glyphicon glyphicon-pause"></span> Berfungsi untuk menghentikan lagu yang sedang dimainkan
+	        <br/>
+			<span class="glyphicon glyphicon-volume-up"></span> Berfungsi untuk mengatur tingkat suara yang dihasilkan
+			<br/>
+			<span class="glyphicon glyphicon-save"></span> Berfunsi untuk menyimpan lagu kedalam memori anda
+			<br/>
+			<div class="well">
+			NB: <br/>
+			<b>
+				Untuk Memainkan Video dan Lagu Harus Terkoneksi Internet Karena File diambil dari Youtube dan Idhostinger				
+			</b>
+			</div>
+			</div>
+		</div>
+	
+
+	</div>
+    
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.navbar-nav [data-toggle="tooltip"]').tooltip();
+    $('.navbar-twitch-toggle').on('click', function(event) {
+        event.preventDefault();
+        $('.navbar-twitch').toggleClass('open');
+    });
+    
+    $('.nav-style-toggle').on('click', function(event) {
+        event.preventDefault();
+        var $current = $('.nav-style-toggle.disabled');
+        $(this).addClass('disabled');
+        $current.removeClass('disabled');
+        $('.navbar-twitch').removeClass('navbar-'+$current.data('type'));
+        $('.navbar-twitch').addClass('navbar-'+$(this).data('type'));
+    });
+});
+</script>
+<script type="text/javascript">
+	document.getElementById("Menu").innerHTML = Menu_Utama[0];
+</script>
+</body>
+</html>
